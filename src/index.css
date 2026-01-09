@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Clean neutral palette */
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Light gray background */
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
+    
+    /* Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+    
+    /* Secondary */
+    --secondary: 220 15% 93%;
+    --secondary-foreground: 220 20% 25%;
+    
+    /* Muted */
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 45%;
+    
+    /* Accent */
+    --accent: 220 15% 92%;
+    --accent-foreground: 220 20% 20%;
+    
+    /* Tutor messages - soft blue */
+    --tutor: 220 60% 97%;
+    --tutor-foreground: 220 30% 20%;
+    --tutor-border: 220 40% 90%;
+    
+    /* Student messages - clean white */
+    --student: 0 0% 100%;
+    --student-foreground: 220 20% 15%;
+    --student-border: 220 20% 88%;
+    
+    /* Success */
+    --success: 160 60% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Destructive */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders */
+    --border: 220 15% 90%;
+    --input: 220 15% 92%;
+    --ring: 220 90% 56%;
+    
+    --radius: 0.75rem;
+    
+    /* Subject colors */
+    --python: 210 90% 50%;
+    --python-bg: 210 90% 96%;
+    --dsa: 280 70% 55%;
+    --dsa-bg: 280 70% 96%;
+    --sql: 25 95% 50%;
+    --sql-bg: 25 95% 96%;
+    --javascript: 50 100% 50%;
+    --javascript-bg: 50 100% 96%;
+    --react: 190 90% 50%;
+    --react-bg: 190 90% 96%;
+    --system-design: 150 60% 45%;
+    --system-design-bg: 150 60% 96%;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 15%;
+    --sidebar-primary: 220 90% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 95%;
+    --sidebar-accent-foreground: 220 20% 25%;
+    --sidebar-border: 220 15% 92%;
+    --sidebar-ring: 220 90% 56%;
+  }
+
+  .dark {
+    --primary: 220 85% 60%;
+    --primary-foreground: 220 20% 5%;
+    
+    --background: 220 20% 8%;
+    --foreground: 220 10% 92%;
+    
+    --card: 220 18% 12%;
+    --card-foreground: 220 10% 92%;
+    
+    --popover: 220 18% 12%;
+    --popover-foreground: 220 10% 92%;
+    
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 220 10% 85%;
+    
+    --muted: 220 15% 16%;
+    --muted-foreground: 220 10% 55%;
+    
+    --accent: 220 15% 18%;
+    --accent-foreground: 220 10% 88%;
+    
+    --tutor: 220 30% 16%;
+    --tutor-foreground: 220 15% 88%;
+    --tutor-border: 220 20% 25%;
+    
+    --student: 220 18% 14%;
+    --student-foreground: 220 10% 90%;
+    --student-border: 220 15% 25%;
+    
+    --success: 160 55% 40%;
+    --success-foreground: 0 0% 100%;
+    
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 220 85% 60%;
+    
+    --python: 210 80% 60%;
+    --python-bg: 210 40% 15%;
+    --dsa: 280 60% 65%;
+    --dsa-bg: 280 30% 15%;
+    --sql: 25 85% 55%;
+    --sql-bg: 25 50% 15%;
+    --javascript: 50 90% 55%;
+    --javascript-bg: 50 50% 15%;
+    --react: 190 80% 55%;
+    --react-bg: 190 40% 15%;
+    --system-design: 150 50% 50%;
+    --system-design-bg: 150 30% 15%;
+    
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 220 10% 88%;
+    --sidebar-primary: 220 85% 60%;
+    --sidebar-primary-foreground: 220 20% 5%;
+    --sidebar-accent: 220 15% 16%;
+    --sidebar-accent-foreground: 220 10% 85%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 220 85% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/30;
+  }
+}
+
+@layer components {
+  .message-tutor {
+    @apply bg-tutor text-tutor-foreground;
+  }
+
+  .message-student {
+    @apply bg-student text-student-foreground shadow-sm border border-student-border;
+  }
+
+  .code-block {
+    font-family: 'JetBrains Mono', monospace;
+    @apply bg-muted text-foreground rounded-lg p-3 text-sm overflow-x-auto border;
+  }
+
+  .glass {
+    @apply bg-white/80 dark:bg-card/80 backdrop-blur-xl;
+  }
+
+  .typing-dot {
+    animation: typingBounce 1.2s infinite ease-in-out both;
+  }
+
+  .typing-dot:nth-child(1) { animation-delay: -0.3s; }
+  .typing-dot:nth-child(2) { animation-delay: -0.15s; }
+
+  @keyframes typingBounce {
+    0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+    40% { transform: translateY(-4px); opacity: 1; }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.2s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .slide-up {
+    animation: slideUp 0.3s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer utilities {
+  .font-handwritten {
+    @apply font-semibold;
+  }
+}

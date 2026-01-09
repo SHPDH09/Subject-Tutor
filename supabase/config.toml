@@ -1,0 +1,4 @@
+project_id = "vethngivfglangfabbad"
+
+[functions.tutor-chat]
+verify_jwt = false
