@@ -25,7 +25,7 @@ This project is a full-stack web application featuring a React-based frontend an
 - **httpx**: Asynchronous HTTP client
 
 ### AI & Database
-- **Google Gemini 2.5-flash**: AI model via Lovable AI Gateway
+- **Google Gemini 2.5-flash**: AI model via Google Gateway
 - **Supabase**: For database and serverless functions
 
 ### Other Tools
