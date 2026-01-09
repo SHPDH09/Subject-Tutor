@@ -1,4 +1,4 @@
-# Subject-Tutor: AI-Powered Educational Chatbot
+# Subject-Tutor: AI-Powered Educational Chatbot - Complete Documentation
 
 ## Project Description
 
@@ -70,6 +70,49 @@ This project is a full-stack web application featuring a React-based frontend an
 - **Progress Tracking**: Visualization of learning progress
 - **Multi-language Support**: Support in Hindi and English
 
+## Code Structure
+
+### Frontend
+```
+src/
+├── App.tsx                 # Main app component
+├── main.tsx               # App entry point
+├── pages/
+│   ├── Index.tsx          # Main chat page
+│   └── NotFound.tsx       # 404 page
+├── components/
+│   ├── chat/              # Chat-related components
+│   │   ├── ChatInput.tsx
+│   │   ├── MessageBubble.tsx
+│   │   ├── Sidebar.tsx
+│   │   └── ...
+│   └── ui/                # UI components (shadcn/ui)
+├── hooks/
+│   └── useChatStore.ts    # State management
+├── types/
+│   └── chat.ts            # TypeScript types
+└── lib/
+    └── utils.ts           # Utility functions
+```
+
+### Backend
+```
+Backend/
+├── main.py                # FastAPI main server
+├── gemini_client.py       # Gemini AI client
+├── sessions.py            # Session management
+└── requirements.txt       # Python dependencies
+```
+
+### Supabase
+```
+supabase/
+├── config.toml
+└── functions/
+    └── tutor-chat/
+        └── index.ts       # Edge function
+```
+
 ## Installation & Setup
 
 ### Prerequisites
@@ -124,6 +167,23 @@ LOVABLE_API_KEY=your_lovable_api_key
 4. Get step-by-step guidance from AI tutor
 5. Use buttons for re-explanation or quiz
 
+## API Endpoints
+
+### FastAPI Backend
+- `GET /health`: Health check
+- `POST /chat`: Send chat message
+
+### Supabase Edge Function
+- `POST /functions/v1/tutor-chat`: AI chat processing
+
+## Features
+- **Multi-subject Support**: 6 different subjects
+- **Real-time Chat**: Interactive conversation
+- **Progress Tracking**: Learning progress visualization
+- **Responsive Design**: Mobile and desktop compatible
+- **Dark/Light Mode**: Theme support
+- **Session Management**: Conversation history preservation
+
 ## Contributing
 1. Fork
 2. Create feature branch (`git checkout -b feature/AmazingFeature`)
@@ -138,5 +198,7 @@ This project is under MIT License.
 For questions or suggestions: [your email]
 
 ---
+
+**PDF Conversion**: To convert this markdown file to PDF, you can use online tools like markdown-pdf.com or pandoc.
 
 **Note**: This project is built for educational purposes and demonstrates the benefits of AI-powered teaching.
